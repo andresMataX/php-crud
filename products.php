@@ -27,6 +27,12 @@ if (isset($_POST['deleteProduct'])) {
   }
 }
 
+if (isset($_POST['update'])) {
+  $productId = $_POST['product_id'];
+
+  header("Location: product.php?q=$productId");
+}
+
 ?>
 
 <body class="container h-full">
@@ -63,15 +69,18 @@ if (isset($_POST['deleteProduct'])) {
             <td><?php echo $item['name'] ?></td>
             <td><?php echo $item['description'] ?></td>
             <td class="d-flex gap-2">
-              <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+              <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <input type="hidden" name="product_id" value="<?php echo $item['id'] ?>">
                 <button type="submit" name="deleteProduct" class="btn btn-outline-danger">
                   <i class="bi bi-trash"></i>
                 </button>
               </form>
-              <button type="button" class="btn btn-outline-warning">
-                <i class="bi bi-pencil-square"></i>
-              </button>
+              <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                <input type="hidden" name="product_id" value="<?php echo $item['id'] ?>">
+                <button type="submit" name="update" class="btn btn-outline-warning">
+                  <i class="bi bi-pencil-square"></i>
+                </button>
+              </form>
             </td>
           </tr>
         <?php endforeach; ?>
