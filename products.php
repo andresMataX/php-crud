@@ -24,7 +24,12 @@ if (isset($_POST['deleteProduct'])) {
 
 <body class="container h-full">
   <div class="mt-5 d-flex flex-column gap-5">
-    <h1 class="text-center">Productos</h1>
+    <h1 class="text-center">
+      Productos
+      <a href="./newProduct.php" class="btn btn-outline-success">
+        <i class="bi bi-plus-circle"></i>
+      </a>
+    </h1>
 
     <?php if (empty($products)) : ?>
       <p class="lead mt-3">No hay productos registrados</p>

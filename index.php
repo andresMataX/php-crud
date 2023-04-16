@@ -2,6 +2,8 @@
 
 <?php
 
+session_start();
+
 if (isset($_POST['submit'])) {
   $username = filter_input(
     INPUT_POST,
@@ -20,7 +22,8 @@ if (isset($_POST['submit'])) {
 
   if (mysqli_num_rows($result) == 1) {
     // Set Session variable
-    // $_SESSION['username'] = $username;
+    $_SESSION['username'] = $usernameDB['username'];
+    $_SESSION['id'] = $usernameDB['id'];
     // Redirect user to another page
     header("Location: products.php");
   } else {
