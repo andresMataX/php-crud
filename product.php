@@ -17,8 +17,8 @@
       <tbody class="table-group-divider">
         <tr>
           <th scope="row">1</th>
-          <td>Lorem ipsum, dolor sit</td>
-          <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem excepturi iste reiciendis deleniti inventore, eum facilis provident.</td>
+          <td>Mark</td>
+          <td>Otto</td>
           <td class="d-flex gap-2">
             <button type="button" class="btn btn-outline-danger">
               <i class="bi bi-trash"></i>
