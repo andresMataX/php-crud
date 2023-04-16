@@ -1,8 +1,8 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'productosapp-php');
+define('DB_HOST', 'b4jxgubl4uhjwxxikiqg-mysql.services.clever-cloud.com');
+define('DB_NAME', 'b4jxgubl4uhjwxxikiqg');
+define('DB_USER', 'uy94b8h2imcststa');
+define('DB_PASS', 'lEg75hFf50vE7agHBCED');
 
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
