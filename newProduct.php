@@ -27,8 +27,8 @@ if (isset($_POST['submit'])) {
   if ($conn->query($sql) === TRUE) {
     header("Location: products.php");
   } else {
-    echo "Error al agregar el registro: " . $conn->error;
-    // echo '<div class="alert alert-danger" role="alert">Error al crear registro</div>';
+    // echo "Error al agregar el registro: " . $conn->error;
+    echo '<div class="alert alert-danger" role="alert">Error al crear registro</div>';
   }
 }
 ?>
