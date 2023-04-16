@@ -1,6 +1,13 @@
 <?php include 'shared/header.php'; ?>
 
 <?php
+session_start();
+
+if (!isset($_SESSION['id'])) {
+  header("Location: index.php");
+  exit();
+}
+
 $sql = 'SELECT * FROM products';
 $result = mysqli_query($conn, $sql);
 $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -23,6 +30,8 @@ if (isset($_POST['deleteProduct'])) {
 ?>
 
 <body class="container h-full">
+  <?php include 'shared/navbar.php'; ?>
+
   <div class="mt-5 d-flex flex-column gap-5">
     <h1 class="text-center">
       Productos

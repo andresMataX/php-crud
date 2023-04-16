@@ -1,5 +1,14 @@
 <?php include 'shared/header.php'; ?>
 
+<?php
+// session_start();
+
+if (!isset($_SESSION['id'])) {
+  header("Location: index.php");
+  exit();
+}
+?>
+
 <body class="container h-full">
   <div class="mt-5 d-flex flex-column gap-5">
     <h1 class="text-center">Productos</h1>
