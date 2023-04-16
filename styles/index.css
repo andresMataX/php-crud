@@ -1,0 +1,16 @@
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.form-control {
+  width: 350px;
+}
+
+.bi-bag {
+  font-size: 4em;
+}
