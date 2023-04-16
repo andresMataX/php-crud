@@ -1,3 +1,5 @@
+<?php include 'shared/header.php'; ?>
+
 <?php
 
 if (isset($_POST['submit'])) {
@@ -12,21 +14,21 @@ if (isset($_POST['submit'])) {
     FILTER_SANITIZE_FULL_SPECIAL_CHARS
   );
 
-  $url = $_SERVER['REQUEST_URI'];
+  $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  $result = mysqli_query($conn, $sql);
+  $usernameDB = mysqli_fetch_assoc($result);
 
-  if ($username == 'pepe@a.com' && $password == '1234') {
+  if (mysqli_num_rows($result) == 1) {
     // Set Session variable
     // $_SESSION['username'] = $username;
     // Redirect user to another page
     header("Location: products.php");
   } else {
-    echo 'Incorrect username or password';
+    echo '<div class="alert alert-danger" role="alert">Usuario o contraseña incorrectos</div>';
   }
 }
 
 ?>
-
-<?php include 'shared/header.php'; ?>
 
 <body class="container h-full">
   <main>

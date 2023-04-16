@@ -21,6 +21,10 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
       </thead>
 
       <tbody class="table-group-divider">
+        <?php if (empty($products)) : ?>
+          <p class="lead mt-3">No hay productos registrados</p>
+        <?php endif; ?>
+
         <?php foreach ($products as $item) : ?>
           <tr>
             <th scope="row">
