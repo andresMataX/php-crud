@@ -25,22 +25,16 @@ if (isset($_GET['q'])) {
 if (isset($_POST['submit'])) {
 
   $productId = $_GET['q'];
-
   $name = $_POST['name'];
   $description = $_POST['description'];
 
-  echo $name;
-  echo $description;
-  echo $productId;
+  $sql = "UPDATE products SET name='$name', description='$description' WHERE id=$productId";
 
-  // $sql = "UPDATE products SET name='$name', description='$description' WHERE id=$productId";
-
-  // if ($conn->query($sql) === TRUE) {
-  //   // header("Location: products.php");
-  // } else {
-  //   echo "Error al editar el registro: " . $conn->error;
-  //   // echo '<div class="alert alert-danger" role="alert">Error al editar registro</div>';
-  // }
+  if ($conn->query($sql) === TRUE) {
+    header("Location: products.php");
+  } else {
+    echo '<div class="alert alert-danger" role="alert">Error al editar registro</div>';
+  }
 }
 ?>
 
