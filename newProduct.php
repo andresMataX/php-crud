@@ -1,35 +1,19 @@
 <?php include 'shared/header.php'; ?>
 
 <body class="container h-full">
-  <div class="mt-5 d-flex flex-column gap-5">
-    <h1 class="text-center">Productos</h1>
+  <div class="mt-5 d-flex flex-column gap-5 align-items-center">
+    <h1 class="text-center">Añadir Producto</h1>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Descripción</th>
-          <th scope="col">Acciones</th>
-        </tr>
-      </thead>
-
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td class="d-flex gap-2">
-            <button type="button" class="btn btn-outline-danger">
-              <i class="bi bi-trash"></i>
-            </button>
-            <button type="button" class="btn btn-outline-warning">
-              <i class="bi bi-pencil-square"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <form class="d-flex flex-column" style="width: 500px;">
+      <div class=" mb-3">
+        <label class="form-label">Nombre del producto</label>
+        <input class="form-control" style="width: 500px;">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Descripción del producto</label>
+        <textarea class="form-control" style="width: 500px;" rows="3"></textarea>
+      </div>
+    </form>
   </div>
 </body>
 
